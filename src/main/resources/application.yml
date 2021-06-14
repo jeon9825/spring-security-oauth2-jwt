@@ -1,0 +1,40 @@
+spring:
+  h2:
+    console:
+      enabled: true
+
+  output:
+    ansi:
+      enabled: always
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+
+jwt:
+  header: Authorization
+  secret-key: han-ji-sung-i-love-you-adorable-my-baby-close-wish-you-back-jung-woo-young
+  token-validity-in-seconds: 86400
+
+kakao:
+  client-id: d2c6e65afd75805d23bd14d692b186be
+  client-secret: ubWYfTK8rae0Wq1bDJQQdNInYNtBiBrc
+
+oauth2:
+  success:
+    redirect:
+      url: /oauth2/authorization/kakao
